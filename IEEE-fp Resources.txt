@@ -9,4 +9,5 @@ Sources:
 Spikes:
 - explains floating point formating, rounding, and error (including underflow and overflow)
 * see "Cancellation" for suggestion on structuring of quadratic formula to minimize error (we might want to make this its own spike)
-> for full IEEE 754 compliance use "-frounding-math" & "-fsignaling-nans" flags
+> for full IEEE 754 compliance use "-frounding-math" & "-fsignaling-nans" flags. This ensures that we don't use any
+  optimizations which would affect accuracy. Additionally, it allows for infinities and nans which we will need.
