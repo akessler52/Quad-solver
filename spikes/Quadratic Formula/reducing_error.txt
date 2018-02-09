@@ -1,0 +1,52 @@
+Sources:	1. https://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html ("What Every Computer Scientist...")
+		2. https://math.stackexchange.com/questions/311382/solving-a-quadratic-equation-with-precision-when-using-floating-point-variables/311397
+			("Solving a quadratic equation with precision...")
+
+1. By using the Citardauq Fromula instead of the Quadratic Formula we can minimize the error when
+|4ac| is small in comparison with |b|. In this case, while using the Quadratic Formula, one of the
+roots computed may suffer serious loss of precision.
+
+	Quadratic Formula
+		x = (-b ± sqrt(b^2 - 4ac)) / 2a
+
+	Citardauq Formula
+		x = 2c / (-b ± sqrt(b^2 - 4ac))
+
+
+2. This is explained in more detail in "What Every Computer Scientist Should Know About Floating
+Point Arithmatic"
+
+Catastrophic cancellation occurs when the operands are subject to rounding errors. For example in
+the quadratic formula, the expression [ b2 - 4ac ] occurs. The quantities [ b2 ] and [ 4ac ] are
+subject to rounding errors since they are the results of floating-point multiplications. Suppose
+that they are rounded to the nearest floating-point number, and so are accurate to within [ .5 ]
+ulp. When they are subtracted, cancellation can cause many of the accurate digits to disappear,
+leaving behind mainly digits contaminated by rounding error. Hence the difference might have an
+error of many ulps. For example, consider [ b = 3.34 ], [ a = 1.22 ], and [ c = 2.28 ]. The exact
+value of [ b2 - 4ac ] is [ .0292 ]. But [ b2 ] rounds to [ 11.2 ] and [ 4ac ] rounds to [ 11.1 ],
+hence the final answer is [ .1 ] which is an error by 70 ulps, even though [ 11.2 - 11.1 ] is
+exactly equal to [ .16 ]. The subtraction did not introduce any error, but rather exposed the error
+introduced in the earlier multiplications.
+
+Benign cancellation occurs when subtracting exactly known quantities. If [ x ] and [ y ] have no
+rounding error, then by Theorem 2 if the subtraction is done with a guard digit, the difference
+[ x-y ] has a very small relative error (less than 2).
+
+A formula that exhibits catastrophic cancellation can sometimes be rearranged to eliminate the
+problem. Again consider the quadratic formula
+
+(4)	r1 = (-b + sqrt(b^2 -4ac)) / 2a
+	r2 = (-b - sqrt(b^2 -4ac)) / 2a
+
+When [ b^2 >> ac ], then [ b^2 - 4ac ] does not involve a cancellation and [ sqrt(b^2 - 4ac) ~= |b| ]. 
+But the other addition (subtraction) in one of the formulas will have a catastrophic cancellation. To
+avoid this, multiply the numerator and denominator of [ r1 ] by [ -b - sqrt(b^2 -4ac) ]
+(and similarly for r2) to obtain
+
+(5)  	r1 = 2c / (-b - sqrt(b^2 -4ac))
+	r2 = 2c / (-b + sqrt(b^2 -4ac))
+
+
+If [ b^2 ] and [ b > 0 ], then computing [ r1 ] using formula (4) will involve a cancellation. Therefore,
+use formula (5) for computing [ r1 ] and (4) for [ r2 ]. On the other hand, if [ b < 0 ], use (4) for
+computing [ r1 ] and (5) for [ r2 ].
