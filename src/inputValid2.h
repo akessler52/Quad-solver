@@ -34,8 +34,6 @@
 double * inputValidation()
 {
     double values[3] = {0.0,0.0,0.0}; //0-aVal 1-bVal 2cVal
-    double xVal;
-    double xVal2;
     char str[100] = "";
     char* token;
     char* aVal;
@@ -48,21 +46,22 @@ double * inputValidation()
     printf("The String is: ");
     printf(str);
     
-    /* **TESTING DELIMITED INPUT VALUES**
+/* **TESTING DELIMITED INPUT VALUES**
      printf(strtok(str, " "));
      printf("\n");
      printf(strtok(NULL, " "));
      printf("\n");
      printf(strtok(NULL, " "));
-     printf("\n");*/
+     printf("\n");
+ */
     
     aVal = strtok(str," ");
     bVal = strtok(NULL, " ");
     cVal = strtok(NULL, " ");
     
-    values[0] = strtol(aVal,&token,10);
-    values[1] = strtol(bVal,&token,10);
-    values[2] = strtol(cVal,&token,10);
+    values[0] = atof(aVal);
+    values[1] = atof(bVal);
+    values[2] = atof(cVal);
     
     if(values[0] == 0)
     {
@@ -97,16 +96,12 @@ double * inputValidation()
             scanfCheckVal = scanf("%lf",&values[2]);
         }
     }
-    
-    /*
-     values[0] = atol(strtok(str," "));
-     values[1] = atol(strtok(NULL, " "));
-     values[2] = atol(strtok(NULL, " "));
-     */
-    
-    /*printf("A Val %lf \n",values[0]);
+
+  /* **Testing**
+    printf("A Val %lf \n",values[0]);
     printf("B Val %lf \n",values[1]);
-    printf("C Val %lf \n",values[2]);*/
+    printf("C Val %lf \n",values[2]);
+   */
     printf("\n");
     
     return values;
