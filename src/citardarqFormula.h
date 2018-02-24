@@ -7,6 +7,7 @@
 //
 /* **Directions**
  -Paste this into your "main"
+ #include "citardarqFormula.h"
  float x1;
  float x2;
  float *xVals = citardarqFormula(aVal, bVal, cVal);

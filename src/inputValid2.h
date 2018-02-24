@@ -8,6 +8,7 @@
 
 /*
  //How to get the A,B,C values from the Input Validation
+ #include "inputValid2.h"
  double aVal;
  double bVal;
  double cVal;
