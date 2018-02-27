@@ -1,0 +1,18 @@
+Automation:
+    Testing will be performed on compile time, and can otherwise be run using a
+    shell script
+
+Tests:
+    System Testing:
+        A shell script will execute the compiled program. It will reading inputs
+        from a file, running the program with each set and testing the output
+        against the pre-validated quadratic equation solutions.
+
+    Unit Testing:
+        Each function of the program is tested independently of the rest to
+        ensure accuracy.
+
+    Usability Testing:
+        Another team will be given access to the program and will provide
+        feedback on its usability i.e. weather or not the software is easy to
+        use, easy to understand, etc.
