@@ -1,2 +1,2 @@
-The software is the property of Professor Kapanga; however anyone is free to
+The software is the property of Professor Kapenga; however anyone is free to
 edit the source code and distribute it as described by the GPL 2.0 licensing.
