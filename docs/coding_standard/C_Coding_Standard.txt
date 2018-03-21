@@ -1,0 +1,35 @@
+Standard:
+    The coding standard used in this project is the one described in
+https://users.ece.cmu.edu/%7Eeno/coding/CCodingStandard.html. A pdf of the
+web-page has been included in this directory for ease of access and reference.
+
+Changes:
+    1. The standard referenced above prescribes what may be referred to as the
+    K&R, Linux Kernel, or OTBS style (see fig. a below). This project will use
+    the alternate format referred to as Allman or BSD style (see fig. b below).
+
+    fig a.
+    .............................
+        if( /*conditional*/ ){
+            //instruction
+        }
+
+        funct_name(){
+            //instruction
+        }
+    ..............................
+    ..............................
+
+    fig b.
+    .............................
+        if( /*conditional*/ )
+        {
+            //instructions
+        }
+
+        funct_name()
+        {
+            //instructions
+        }
+    ...............................
+    ...............................
