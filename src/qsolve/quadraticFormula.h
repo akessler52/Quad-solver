@@ -17,21 +17,7 @@
  printf("X2 Value %lf \n",Quadx2);
  */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
-#include <string.h>
-
 #ifndef quadraticFormula_h
 #define quadraticFormula_h
-
-float * quadraticFormula(double aVal,double bVal, double cVal)
-{
-    float xVals[2] = {0.0,0.0};
-    
-    xVals[0] = ((-bVal)+(sqrt((bVal*bVal)-(4*(aVal*cVal)))))/(2*(aVal));
-    xVals[1] = ((-bVal)-(sqrt((bVal*bVal)-(4*(aVal*cVal)))))/(2*(aVal));
-
-    return xVals;
-}
+float * quadraticFormula(double aVal,double bVal, double cVal);
 #endif /* quadraticFormula_h */

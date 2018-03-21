@@ -17,20 +17,7 @@
  printf("X2 Value %lf \n",x2);
 */
 
-#include <math.h>
-#include <stdlib.h>
-
 #ifndef citardarqFormula_h
 #define citardarqFormula_h
-
-float * citardarqFormula(double aVal,double bVal,double cVal)
-{
-    float xVals[2] = {0.0,0.0};
-    
-    xVals[0] = (2*cVal)/((-bVal)+(sqrt((bVal*bVal)-(4*(aVal*cVal)))));
-    xVals[1] = (2*cVal)/((-bVal)-(sqrt((bVal*bVal)-(4*(aVal*cVal)))));
-    
-    return xVals;
-}
-
+float * citardarqFormula(double aVal,double bVal,double cVal);
 #endif /* citardarqFormula_h */
