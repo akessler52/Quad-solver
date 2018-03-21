@@ -3,13 +3,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/*text to be displayed with results*/
 #define OUTPUT_PROMPT Factors:
 
 /*used to turn macro into string*/
 #define _TEXTIFY(x) #x
 #define TEXTIFY(x) _TEXTIFY(x)
 
-
+/*Stringifies prompt with argument doubles and returns result*/
 char* foutput(double x1, double x2)
 {
     char* output = calloc(1, sizeof(char));
