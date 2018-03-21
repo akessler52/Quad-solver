@@ -1,3 +1,8 @@
+#define _GNU_SOURCE
+
+#include <stdio.h>
+#include <stdlib.h>
+
 #define OUTPUT_PROMPT Factors:
 
 /*used to turn macro into string*/
