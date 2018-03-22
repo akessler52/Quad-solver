@@ -38,6 +38,8 @@ char* foutput(double x1, double x2)
             asprintf(&output, "%s%.16g\n", output, x2);
         }
         free(temp);
+
+    //ensures string ends in new line char
     }else
     {
         temp = output;
