@@ -1,21 +1,16 @@
-#define _GNU_SOURCE
+//
+//  fOutput.c
+//  QuadraticSolver
+//
+//  Created by Admin on 3/22/18.
+//  Copyright © 2018 Admin. All rights reserved.
+//
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "fOutput.h"
 
-/*text to be displayed with results*/
-#define OUTPUT_PROMPT Factors:
-
-/*used to turn macro into string*/
-#define _TEXTIFY(x) #x
-#define TEXTIFY(x) _TEXTIFY(x)
-
-/*Stringifies prompt with argument doubles and returns result*/
-char* foutput(double x1, double x2)
+void fOuput(double quadX1,double quadX2)
 {
-    char* output = calloc(1, sizeof(char));
-    char* temp = output;
-    asprintf(&output, "%s %lf, %lf\n", TEXTIFY(OUTPUT_PROMPT), x1, x2);
-    free(temp);
-    return output;
+    printf("Quadratic Equation: X1 Value %lf \n",quadX1);
+    printf("Quadratic Equation: X2 Value %lf \n",quadX2);
+    printf("\n");
 }

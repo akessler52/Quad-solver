@@ -11,44 +11,37 @@
 #include <math.h>
 #include <string.h>
 #include "inputValid.h"
-#include "citardarqFormula.h"
+#include "lineRead.h"
 #include "quadraticFormula.h"
+#include "fOutput.h"
 #define MAX_SIZE 1024
 
 int main(int argc, const char * argv[])
 {
+    //Variables and Arrays
+    double * values = (double *) malloc(4); //0-aVal 1-bVal 2-cVal 3-Return Value 0 for valid 1 for invalid
     int run = 1; //Flag keeps the program running
+    char *str = (char *) malloc(100);
+    float quadX1; //Root One
+    float quadX2; //Root Two
+    
     do{
-    double aVal;
-    double bVal;
-    double cVal;
-    double *values = inputValidation();
-    aVal = *(values + 0);
-    bVal = *(values + 1);
-    cVal = *(values + 2);
     
-    printf("A Value %lf \n",aVal);
-    printf("B Value %lf \n",bVal);
-    printf("C Value %lf \n",cVal);
-    printf("\n");
+    str = lineRead();
+    values = inputValidation(str);
     
-    float x1;
-    float x2;
-    float *xVals = citardarqFormula(aVal, bVal, cVal);
-    x1 = *(xVals + 0);
-    x2 = *(xVals + 1);
-    printf("Citardarq Formula: X1 Value %lf \n",x1);
-    printf("Citardarq Formula: X2 Value %lf \n",x2);
+    while(*(values+3) == 1)
+    {
+        str = lineRead();
+        values = inputValidation(str);
+    }
     
-    float Quadx1;
-    float Quadx2;
-    float *xVals2 = citardarqFormula(aVal, bVal, cVal);
-    Quadx1 = *(xVals2 + 0);
-    Quadx2 = *(xVals2 + 1);
-    printf("Quadratic Equation: X1 Value %lf \n",Quadx1);
-    printf("Quadratic Equation: X2 Value %lf \n",Quadx2);
-    printf("\n");
-        
+    float *xVals = quadraticFormula(*(values+0),*(values+1), *(values+2));
+    quadX1 = *(xVals + 0);
+    quadX2 = *(xVals + 1);
+    fOuput(quadX1, quadX2);
+   
+    
     }while(run);
     return 0;
 }

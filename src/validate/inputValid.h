@@ -24,5 +24,5 @@
  */
 #ifndef inputValid_h
 #define inputValid_h
-double * inputValidation(void);
+double * inputValidation(char *);
 #endif /* inputValid_h */

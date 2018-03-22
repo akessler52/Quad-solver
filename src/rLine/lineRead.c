@@ -23,7 +23,7 @@ char * lineRead()
     strBackup = (char *) malloc(100); //Malloc memory to later pass to inputValid
     printf("Enter a Quadratic (aX^2+bx+c) in form A B C \n");
     fgets(str,100, stdin); //Retrieve Stdin values
-    printf("The String is: %s",str);
+    //printf("The String is: %s",str);
     strBackup = str; //Copy str to strBackup
     //Add Check here to make sure there are 3 variables
     

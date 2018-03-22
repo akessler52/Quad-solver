@@ -28,15 +28,14 @@
 #include <setjmp.h>
 #include <math.h>
 #include <string.h>
-#include "lineRead.h"
 #define MAX_SIZE 1024
 
-double * inputValidation()
+double * inputValidation(char * lineReadStr)
 {
     //Variables and Arrays
-    double * values = (double *) malloc(3); //0-aVal 1-bVal 2cVal
+    double * values = (double *) malloc(4); //0-aVal 1-bVal 2-cVal 3-Return Value 0 for valid 1 for invalid
     char* linePtr; //Pointer for tokenizing string
-    char *str = lineRead(); //Calls lineRead which pulls the input from console
+    char *str = lineReadStr; //Calls lineRead which pulls the input from console
     
     //Retriving values
     strtok(str," "); //Sets the pointer on the string read from lineRead()
@@ -59,13 +58,12 @@ double * inputValidation()
     //Error checking and printing
     if(*(values + 0) == 0) //Checks the value of A to see if it's 0. In the case its 0 the string is not a quadratic reRun and tell the user to retry
     {
-        printf("WARNING! This is not a quadratic. Enter a new string. \n");
-        return inputValidation();
+        printf("ERROR: This is not a quadratic. Enter a new string. \n");
+        *(values + 3) = 1;
     }
-    
-    if(*(values + 1) == 0 || *(values + 2) == 0) //Checks if the next two values are 0 if thats the case it will let these user know it more than likely wont work.
+    else if(*(values + 1) == 0 || *(values + 2) == 0) //Checks if the next two values are 0 if thats the case it will let these user know it more than likely wont work.
     {
-        printf("WARNING! One or more of your values is 0 this can cause nans and erorrs. \n");
+        printf("Error! One or more of your values is 0 this can cause nans and erorrs. \n");
     }
     
     return values;
