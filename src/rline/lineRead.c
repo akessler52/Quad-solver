@@ -25,16 +25,17 @@ char * lineRead()
     fgets(str,100, stdin); //Retrieve Stdin values
     printf("The String is: %s",str);
     strBackup = str; //Copy str to strBackup
-
+    //Add Check here to make sure there are 3 variables
+    
     while((str = strchr(str,' ')) != NULL) //While there's another space delimited token add to count and move pointer
     {
         count++;
         str++;
     }
-
+    
     if(count < 2) //If the count is less than 2 warn user and return lineRead();
     {
-        printf("TOO FEW VALUES: Try again \n");
+        printf("INPUT INVALID: Try again \n");
         return lineRead();
     }else
         return strBackup;

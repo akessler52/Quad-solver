@@ -28,15 +28,15 @@
 #include <setjmp.h>
 #include <math.h>
 #include <string.h>
-#include "../rLine/lineRead.h"
+//#include "../rLine/lineRead.h"
 #define MAX_SIZE 1024
 
-double * inputValidation()
+double * inputValidation(char* str)
 {
     //Variables and Arrays
     double * values = (double *) malloc(3); //0-aVal 1-bVal 2cVal
     char* linePtr; //Pointer for tokenizing string
-    char *str = lineRead(); //Calls lineRead which pulls the input from console
+    //char *str = lineRead(); //Calls lineRead which pulls the input from console
 
     //Retriving values
     strtok(str," "); //Sets the pointer on the string read from lineRead()
@@ -60,7 +60,7 @@ double * inputValidation()
     if(*(values + 0) == 0) //Checks the value of A to see if it's 0. In the case its 0 the string is not a quadratic reRun and tell the user to retry
     {
         printf("WARNING! This is not a quadratic. Enter a new string. \n");
-        return inputValidation();
+        return NULL;
     }
 
     if(*(values + 1) == 0 || *(values + 2) == 0) //Checks if the next two values are 0 if thats the case it will let these user know it more than likely wont work.
