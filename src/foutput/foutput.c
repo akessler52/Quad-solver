@@ -22,7 +22,7 @@ char* foutput(double x1, double x2)
     {
         x1_isReal = true;
         temp = output;
-        asprintf(&output, "%s%.16g", output, x1);
+        asprintf(&output, "%s%g", output, x1);
         free(temp);
     }
 
@@ -32,10 +32,10 @@ char* foutput(double x1, double x2)
         temp = output;
         if(x1_isReal)
         {
-            asprintf(&output, "%s, %.16g\n", output, x2);
+            asprintf(&output, "%s, %g\n", output, x2);
         }else
         {
-            asprintf(&output, "%s%.16g\n", output, x2);
+            asprintf(&output, "%s%g\n", output, x2);
         }
         free(temp);
 

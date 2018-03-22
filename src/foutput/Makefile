@@ -8,7 +8,7 @@ LIBS= -lm
 test: test_1
 
 test_1:
-	${CC} ${CFLAGS} foutput.c ./test/test_1.c -o test_runner ${LIBS}
+	${CC} ${CFLAGS} foutput.c ./test/cunit.c ./test/test_1.c -o test_runner ${LIBS}
 	./test_runner
 	clean
 

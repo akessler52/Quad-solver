@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <assert.h>
-#include <math.h> 
+#include <math.h>
 
-extern FILE *cunit_log; 
+extern FILE *cunit_log;
 extern double cunit_dmacheps;
 
 int cunit_init();
@@ -21,8 +21,6 @@ int cunit_init();
 #define cunit_print(str) { \
     fprintf(cunit_log, "%s\n", str ); \
 }
-
-
 #define assert_eq(str,a,b) { \
   if( a != b ) { \
     fprintf(cunit_log, "%s  LINE %d: %s, %d !== %d\n", \
@@ -73,7 +71,7 @@ int cunit_init();
   } \
 }
 // eq subject to relative error
-// Perhaps it should check if a == b == 0.0 
+// Perhaps it should check if a == b == 0.0
 #define assert_feqrerr(str,a,b,rerr) { \
   if( fabs(a - b)/(fabs(a) + fabs(b)) > rerr ) { \
     fprintf(cunit_log, "%s  LINE %d: %s, %24.16f !>= %24.16f rerr=%10.6e\n", \
