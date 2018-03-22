@@ -20,7 +20,7 @@ int main()
 
     //test battery
     run_test(0.0f, 0.000f, "0, 0"); //zeros test
-    run_test(.11111111111111119999999999f, .00000000000000009f, "0.1111111111111112, 9e-17");    //precision display test
+    run_test(.11111111111111111f, .00000000000000009f, "0.111111, 9e-17");    //precision display test
     run_test(_NAN, 7.5f, "7.5"); //nan tests
     run_test(7.5f, _NAN, "7.5");
     run_test(POS_INF, 36.33f, "36.33");  // positive infinity tests
