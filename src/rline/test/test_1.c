@@ -24,16 +24,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <unistd.h>
 #include <fcntl.h>
 
-#include "cunit.h"
 #include "../lineRead.h"
 
 void run_test(char* console_input, char* expected_output);
 
 int main()
 {
-
-    // initialize the unit testing framework
-    cunit_init();
 
     char *expected_outputs[] = {"5", "Swim", "The Dog Ran Fast", "44.33 1 11.2", "44, 11, 12", "///", "."};
     int test_num = 7;

@@ -22,7 +22,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <stdio.h>
 #include <stdbool.h>
 
-#include "cunit.h"
 #include "../citardarqFormula.h"
 
 void run_test(double a, double b, double c, double exppected_1, double expected_2);
@@ -30,10 +29,6 @@ bool _assert_feqaerr(double a, double b, double aerr);
 
 int main()
 {
-
-    // initialize the unit testing framework
-    cunit_init();
-
     double nan = 0.0/0.0;
 
     //test battery

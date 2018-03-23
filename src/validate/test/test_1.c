@@ -19,16 +19,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <string.h>
 #include <stdio.h>
 
-#include "cunit.h"
 #include "../foutput.h"
 
 void run_test(double x1, double x2, char* expected_output);
 
 int main()
 {
-
-    // initialize the unit testing framework
-    cunit_init();
 
     double POS_INF = 1.0/0.0;
     double NEG_INF = -1.0/0.0;

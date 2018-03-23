@@ -7,7 +7,7 @@ lineRead.o: lineRead.c
 test: test_1
 
 test_1:
-	${CC} ${CFLAGS} lineRead.c ./test/cunit.c ./test/test_1.c -o test_runner ${LIBS}
+	${CC} ${CFLAGS} lineRead.c ./test/test_1.c -o test_runner ${LIBS}
 	./test_runner < ./test/test_cases.txt
 	make clean
 
