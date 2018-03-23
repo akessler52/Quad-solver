@@ -51,7 +51,7 @@ char* foutput(double x1, double x2)
     }else
     {
         //if no real factors then notify user
-        if(x1_isReal)
+        if(!x1_isReal)
         {
             temp = output;
             asprintf(&output, "%s No Real Solutions", output);
