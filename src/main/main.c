@@ -13,7 +13,7 @@
 
 #include "../validate/inputValid.h"
 #include "../qsolve/citardarqFormula.h"
-#include "../qsolve/quadraticFormula.h"
+// #include "../qsolve/quadraticFormula.h"
 #include "../rline/lineRead.h"
 #include "../wline/wline.h"
 #include "../foutput/foutput.h"

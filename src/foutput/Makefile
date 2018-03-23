@@ -1,9 +1,8 @@
-# makefile
-# Michael Riess
-
-CFLAGS= -Wall -pedantic -std=c99
+CFLAGS= -Wall -pedantic -std=c11
 CC= gcc
 LIBS= -lm
+
+foutput.o: foutput.c
 
 test: test_1
 

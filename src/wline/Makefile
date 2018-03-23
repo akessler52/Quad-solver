@@ -2,7 +2,7 @@ CC = gcc
 CFLAGS = -std=c11 -Wall -pedantic
 LDFLAGS = -lm
 
-inputValid.o: inputValid.c
+wline.o: wline.c
 
 clean:
 	-rm *.o

@@ -1,9 +1,9 @@
 CC = gcc
-SOURCE = main/main.c rline/lineRead.o wline/wline.o qsolve/quadraticFormula.o qsolve/citardarqFormula.o validate/inputValid.o
+SOURCE = main/main.c rline/lineRead.o wline/wline.o qsolve/citardarqFormula.o \
+			validate/inputValid.o foutput/foutput.o
 CFLAGS = -std=c11 -Wall -pedantic
-OBJ = rline qsolve validate
+OBJ = rline qsolve validate wline foutput
 NAME = $(basename $(SOURCE))
-
 LIBEMB = -lm
 
 build:

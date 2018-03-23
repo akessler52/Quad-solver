@@ -1,9 +1,8 @@
-# makefile
-# Michael Riess
-
-CFLAGS= -Wall -g3 -pedantic -std=c99
 CC= gcc
+CFLAGS= -Wall -g3 -pedantic -std=c11
 LIBS= -lm
+
+lineRead.o: lineRead.c
 
 test: test_1
 

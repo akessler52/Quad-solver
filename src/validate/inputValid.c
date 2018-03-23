@@ -31,7 +31,7 @@
 #include <string.h>
 
 
-double * inputValidation(char * lineReadStr)
+// double * inputValidation(char * lineReadStr)
 
 //converts input string to doubles and returns them. Null is returned instead
 //upon failure
