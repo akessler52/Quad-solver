@@ -10,10 +10,10 @@
 #include <stdlib.h>
 #include <math.h>
 
-float * citardarqFormula(double aVal,double bVal,double cVal)
+double * citardarqFormula(double aVal,double bVal,double cVal)
 {
-    float * xVals = (float *) malloc(2);
-    float sqrtVal = (sqrt((bVal*bVal)-(4*(aVal*cVal))));
+    double * xVals = (double *) malloc(2);
+    double sqrtVal = (sqrt((bVal*bVal)-(4*(aVal*cVal))));
     xVals[0] = ((2*cVal)/((-bVal)+sqrtVal));
     xVals[1] = ((2*cVal)/((-bVal)-sqrtVal));
 

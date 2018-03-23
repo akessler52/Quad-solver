@@ -50,9 +50,18 @@ char* foutput(double x1, double x2)
     //ensures string ends in new line char
     }else
     {
+        //if no real factors then notify user
+        if(x1_isReal)
+        {
+            temp = output;
+            asprintf(&output, "%s No Real Solutions", output);
+            free(temp);
+        }
+
         temp = output;
         asprintf(&output, "%s\n", output);
         free(temp);
+
     }
 
     return output;

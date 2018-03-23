@@ -56,9 +56,9 @@ int main(int argc, const char * argv[])
         printf("\n");
 */
 
-        float x1;
-        float x2;
-        float *xVals = citardarqFormula(aVal, bVal, cVal);
+        double x1;
+        double x2;
+        double *xVals = citardarqFormula(aVal, bVal, cVal);
         x1 = *(xVals + 0);
         x2 = *(xVals + 1);
 

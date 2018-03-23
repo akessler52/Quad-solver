@@ -2,11 +2,13 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
+#include <stdbool.h>
 
 #include "cunit.h"
-#include "../foutput.h"
+#include "../citardarqFormula.h"
 
-void run_test(double x1, double x2, char* expected_output);
+void run_test(double a, double b, double c, double exppected_1, double expected_2);
+bool _assert_feqaerr(double a, double b, double aerr);
 
 int main()
 {
@@ -14,32 +16,48 @@ int main()
     // initialize the unit testing framework
     cunit_init();
 
-    double POS_INF = 1.0/0.0;
-    double NEG_INF = -1.0/0.0;
-    double _NAN = 0.0/0.0;
+    double nan = 0.0/0.0;
 
     //test battery
-    run_test(0.0f, 0.000f, "0, 0"); //zeros test
-    run_test(.11111111111111111f, .00000000000000009f, "0.111111, 9e-17");    //precision display test
-    run_test(_NAN, 7.5f, "7.5"); //nan tests
-    run_test(7.5f, _NAN, "7.5");
-    run_test(POS_INF, 36.33f, "36.33");  // positive infinity tests
-    run_test(36.33f, POS_INF, "36.33");
-    run_test(NEG_INF, 99.45f, "99.45");  //negative infinity tests
-    run_test(99.45f, NEG_INF, "99.45");
-    run_test(43.4f, 0.22f, "43.4, 0.22");   //general tests
+    run_test(5.0f, 23.0f, -1.0f, -4.6854f, 0.085372f);
+    run_test(4.0f, 3.0, 5.0f, nan, nan);
+    run_test(2.0f, -8.0f, 5.66678f, 0.919903f, 3.0801f);
+    run_test(-50.3f, 0.1234567f, 77.0f, -1.23603f, 1.23849f);
+    run_test(23.0f, 7.98f, 2.0f, nan, nan);
+    run_test(2.45764f, 33.0f, 5.554f, -13.257f, -0.170467f);
+    run_test(55.0f, 55.0f, 6.0f, -0.87538f, 0.12462f);
+    run_test(-5.0f, 7.0f, 0.0f, 0.0f, 1.4f);
+    run_test(5.0f, 7.0f, 0.0f, -1.4f, 0.0f);
+    run_test(1.0f, 22.67f, -3.4009765f, -22.819f, 0.149041f);
 
 }
 
-void run_test(double x1, double x2, char* expected_output)
+void run_test(double a, double b, double c, double expected_1, double expected_2)
 {
-    char *str = foutput(x1, x2);
-    char *tmp = strchr(str, ' ');
-    tmp++;
-    tmp[strlen(tmp)-1] = '\0';
-    if( strcmp(expected_output, tmp) != 0 ) { \
-            fprintf(cunit_log, "%s  LINE %d: %s, %s !== %s\n", \
-                __FILE__ , __LINE__ , "XX", tmp, expected_output); \
+    double aerr = 0.0000005f;
+    double *sols = citardarqFormula(a, b, c);
+
+    if( (_assert_feqaerr(sols[0], expected_1, aerr) && _assert_feqaerr(sols[1], expected_2, aerr) ) || \
+        (_assert_feqaerr(sols[0], expected_2, aerr) && _assert_feqaerr(sols[1], expected_1, aerr)) )
+    {
+        fprintf(cunit_log, "%s  LINE %d: %s, %f & %f !== %f & %f\n", \
+            __FILE__ , __LINE__ , "qsolve", sols[0], sols[1], expected_1, expected_2); \
     }
-    free(str);
+
+}
+
+bool _assert_feqaerr(double a, double b, double aerr)
+{
+    if( fabs(a - b) > aerr )
+    {
+        if(isnan(a) && isnan(b))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    return true;
 }
