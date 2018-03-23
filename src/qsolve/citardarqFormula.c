@@ -1,10 +1,19 @@
-//
-//  citardarqFormula.c
-//  QuadraticSolver
-//
-//  Created by Ryan Hamilton on 3/20/18.
-//  Copyright © 2018 Admin. All rights reserved.
-//
+/*
+Copyright @ 2018 Western Michigan University
+
+This file is part of Quadsolver.
+Quadsolver is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, version 2 of the License.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
 
 #include <stdio.h>
 #include <stdlib.h>

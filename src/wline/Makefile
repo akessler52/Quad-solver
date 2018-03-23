@@ -14,4 +14,4 @@ test_1:
 	make clean
 
 clean:
-	-rm -f *.log *.o *.exe test_runner test_checker test_cases.txt *.tar
+	-rm -f *.log *.o *.exe test_runner test_checker test/test_cases.txt *.tar
