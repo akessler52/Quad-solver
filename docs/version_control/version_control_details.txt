@@ -1,0 +1,3 @@
+git is used as the version control system for this project which is hosted on
+Github. A pdf which gives a brief walk-through of the git platform can be found
+in this directory.
