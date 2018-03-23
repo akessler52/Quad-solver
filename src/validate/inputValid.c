@@ -47,32 +47,35 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //upon failure
 double * inputValidation(char* str)
 {
-
+    //Variabless
+    int count=0;
+    char * tempArray = str;
     if(str == NULL || strlen(str) < 2){
         return NULL;
     }
-
-    bool isInvalid = false;
-
-    //Variables and Arrays
-    double * values = (double *) malloc(3); //0-aVal 1-bVal 2-cVal
-    char* linePtr=NULL; //Pointer for tokenizing string
-
-    //Retriving values
-    strtok(str," "); //Sets the pointer on the string read from lineRead()
     
-    if(linePtr == NULL)
+    while((tempArray = strchr(tempArray,' ')) != NULL) //While there's another space delimited token add to count and move pointer
+    {
+        count++;
+        tempArray++;
+    }
+    
+    if(count < 2) //If the count is less than 2 warn user and return lineRead();
     {
         return NULL;
     }
-    
-    *(values + 0) = strtod(str, &linePtr); //Convert
-    if(values[0] == 0.0f && str == linePtr)
-    {
-        isInvalid = true;
-    }
 
-    if(linePtr == NULL)
+   // bool isInvalid = false;
+
+    //Variables and Arrays
+    double * values = (double *) malloc(3); //0-aVal 1-bVal 2-cVal
+    char* linePtr; //Pointer for tokenizing string
+
+    //Retriving values
+    strtok(str," "); //Sets the pointer on the string read from lineRead()
+    *(values + 0) = strtod(str, &linePtr); //Convert
+    
+    if(values[0] == 0.0f && str == linePtr)
     {
         return NULL;
     }
@@ -81,11 +84,6 @@ double * inputValidation(char* str)
     *(values + 1) = strtod(linePtr, NULL);
     if(values[0] == 0.0f && str == linePtr)
     {
-        isInvalid = true;
-    }
-    
-    if(linePtr == NULL)
-    {
         return NULL;
     }
 
@@ -93,10 +91,10 @@ double * inputValidation(char* str)
     *(values + 2) = strtod(linePtr, NULL);
     if(values[0] == 0.0f && str == linePtr)
     {
-        isInvalid = true;
+        return NULL;
     }
 
-    //Error checking and printing
+    /*//Error checking and printing
     if(isInvalid)
     {
         return NULL;
@@ -109,7 +107,7 @@ double * inputValidation(char* str)
     else if(*(values + 1) == 0 || *(values + 2) == 0) //Checks if the next two values are 0 if thats the case it will let these user know it more than likely wont work.
     {
         return NULL;
-    }
+    }*/
 
 
     return values;
