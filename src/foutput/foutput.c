@@ -1,20 +1,13 @@
 //
-//  fOutput.c
+//  foutput.c
 //  QuadraticSolver
 //
 //  Created by Admin on 3/22/18.
 //  Copyright © 2018 Admin. All rights reserved.
 //
 
-<<<<<<< HEAD
-#include "fOutput.h"
+#define _GNU_SOURCE
 
-void fOuput(double quadX1,double quadX2)
-{
-    printf("Quadratic Equation: X1 Value %lf \n",quadX1);
-    printf("Quadratic Equation: X2 Value %lf \n",quadX2);
-    printf("\n");
-=======
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -63,5 +56,4 @@ char* foutput(double x1, double x2)
     }
 
     return output;
->>>>>>> 5cbc6b0e411c7402816f68d533a81f4e5642e8d7
 }
