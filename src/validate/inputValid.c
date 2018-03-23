@@ -56,42 +56,45 @@ double * inputValidation(char* str)
 
     //Variables and Arrays
     double * values = (double *) malloc(3); //0-aVal 1-bVal 2-cVal
-    char* linePtr; //Pointer for tokenizing string
-
-    //char *str = lineReadStr; //Calls lineRead which pulls the input from console
-    //char *str = lineRead(); //Calls lineRead which pulls the input from console
+    char* linePtr=NULL; //Pointer for tokenizing string
 
     //Retriving values
     strtok(str," "); //Sets the pointer on the string read from lineRead()
+    
+    if(linePtr == NULL)
+    {
+        return NULL;
+    }
+    
     *(values + 0) = strtod(str, &linePtr); //Convert
-    //printf("%lf \n",strtod(str, &linePtr));
     if(values[0] == 0.0f && str == linePtr)
     {
         isInvalid = true;
     }
 
+    if(linePtr == NULL)
+    {
+        return NULL;
+    }
+    
     linePtr = strtok(NULL, " "); //Moves Pointer to next value
     *(values + 1) = strtod(linePtr, NULL);
-    //printf("%lf \n",strtod(linePtr, NULL));
     if(values[0] == 0.0f && str == linePtr)
     {
         isInvalid = true;
+    }
+    
+    if(linePtr == NULL)
+    {
+        return NULL;
     }
 
     linePtr = strtok(NULL, " "); //Move Pointer to next value
     *(values + 2) = strtod(linePtr, NULL);
-    //printf("%lf \n",strtod(linePtr, NULL));
     if(values[0] == 0.0f && str == linePtr)
     {
         isInvalid = true;
     }
-
-/*COMMENTED OUT BECAUSE ONLY wline SHOULD CALL PRINTF, PER DIRECTIONS
-    printf("A Val %lf \n",*(values + 0));
-    printf("B Val %lf \n",*(values + 1));
-    printf("C Val %lf \n",*(values + 2));
-    printf("\n");
-*/
 
     //Error checking and printing
     if(isInvalid)
@@ -101,13 +104,10 @@ double * inputValidation(char* str)
 
     if(*(values + 0) == 0) //Checks the value of A to see if it's 0. In the case its 0 the string is not a quadratic reRun and tell the user to retry
     {
-            //printf("ERROR: This is not a quadratic. Enter a new string. \n");
         return NULL;
     }
     else if(*(values + 1) == 0 || *(values + 2) == 0) //Checks if the next two values are 0 if thats the case it will let these user know it more than likely wont work.
     {
-            //printf("Error! One or more of your values is 0 this can cause nans and erorrs. \n");
-        //printf("WARNING! This is not a quadratic. Enter a new string. \n");
         return NULL;
     }
 
