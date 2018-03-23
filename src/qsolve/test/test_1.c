@@ -53,7 +53,6 @@ bool _assert_feqaerr(double a, double b, double aerr)
 {
     if(isnan(a) != 0 && isnan(b) != 0)
     {
-        printf("d");
         return true;
     }
     else if( fabs(a - b) > aerr )

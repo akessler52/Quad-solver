@@ -4,5 +4,6 @@ LDFLAGS = -lm
 
 wline.o: wline.c
 
+
 clean:
-	-rm *.o
+	-rm -f *.log *.o *.exe test_runner *.tar
