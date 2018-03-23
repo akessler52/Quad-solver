@@ -51,7 +51,7 @@ double * inputValidation(char* str)
     bool isInvalid = false;
 
     //Variables and Arrays
-    double * values = (double *) malloc(4); //0-aVal 1-bVal 2-cVal 3-Return Value 0 for valid 1 for invalid
+    double * values = (double *) malloc(3); //0-aVal 1-bVal 2-cVal
     char* linePtr; //Pointer for tokenizing string
 
     //char *str = lineReadStr; //Calls lineRead which pulls the input from console
