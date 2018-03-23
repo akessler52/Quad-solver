@@ -32,18 +32,26 @@ int main(int argc, const char * argv[])
 {
     //Variables and Arrays
     int run = 1; //Flag keeps the program running
-
+    
     do
     {
+        wline(stdout,"Given the form aX^2+bx+c enter in the form of A B C OR Exit \n");
+        
         double aVal;
         double bVal;
         double cVal;
-
+        
         double *values = NULL;
 
         while(values == NULL)
         {
             char *input = lineRead();
+            
+            if(strcmp(input,"Exit\n") == 0)
+            {
+                exit(0);
+            }
+            
             values = inputValidation(input);
             if(values == NULL)
             {
