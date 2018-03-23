@@ -1,0 +1,6 @@
+This directory contains the c and c header files for the citardarqFormula,
+and alternative to the quadratic formula, function of the Quadsolver program.
+This directory also contains a sub-directory named "test" which contains all the
+files associated with unit testing for the citardarqFormula function. The
+makefile can be used to run unit testing on the citardarqFormula function and
+clean the directory of all compressed, executable, and object files.

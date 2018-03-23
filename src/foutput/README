@@ -1,0 +1,5 @@
+This directory contains the c and c header files for the foutput function of the
+Quadsolver program. This directory also contains a sub-directory named "test"
+which contains all the files associated with unit testing for the foutput function.
+The makefile can be used to run unit testing on the foutput function and clean
+the directory of all compressed, executable, and object files.

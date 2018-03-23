@@ -1,0 +1,6 @@
+This directory contains the c and c header files for the inputValidate function
+of the Quadsolver program. This directory also contains a sub-directory named
+"test" which contains all the files associated with unit testing for the
+inputValidate function. The makefile can be used to run unit testing on the
+inputValidate function and clean the directory of all compressed, executable,
+and object files.

@@ -1,0 +1,4 @@
+This is the root directory for the Quadsolver program. The "src" sub-directory
+contains all program files and unit testing. The "docs" sub-directory contains
+the non-program files associated with the research, development, and release
+of the Quadsolver program. 
