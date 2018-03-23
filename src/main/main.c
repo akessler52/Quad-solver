@@ -35,7 +35,7 @@ int main(int argc, const char * argv[])
     
     do
     {
-        wline(stdout,"Given the form aX^2+bx+c enter in the form of A B C \n");
+        wline(stdout,"Given the form aX^2+bx+c enter in the form of A B C OR Exit \n");
         
         double aVal;
         double bVal;
@@ -46,6 +46,12 @@ int main(int argc, const char * argv[])
         while(values == NULL)
         {
             char *input = lineRead();
+            
+            if(strcmp(input,"Exit\n") == 0)
+            {
+                exit(0);
+            }
+            
             values = inputValidation(input);
             if(values == NULL)
             {
