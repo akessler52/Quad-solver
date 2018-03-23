@@ -21,7 +21,7 @@ char * lineRead()
     int count = 0;
     str = (char *) malloc(100); //Malloc memory to later check for 3 distinct values
     strBackup = (char *) malloc(100); //Malloc memory to later pass to inputValid
-    printf("Enter a Quadratic (aX^2+bx+c) in form A B C \n");
+    //printf("Enter a Quadratic (aX^2+bx+c) in form A B C \n");
     fgets(str,100, stdin); //Retrieve Stdin values
     //printf("The String is: %s",str);
     strBackup = str; //Copy str to strBackup
@@ -32,10 +32,13 @@ char * lineRead()
         str++;
     }
 
+    /*//lineRead SHOULDNT PRINT TO THE CONSOLE OR DO ANY INPUT VALIDATION
     if(count < 2) //If the count is less than 2 warn user and return lineRead();
     {
         printf("TOO FEW VALUES: Try again \n");
         return lineRead();
     }else
-        return strBackup;
+    */
+
+    return strBackup;
 }
