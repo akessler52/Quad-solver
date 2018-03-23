@@ -48,6 +48,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 double * inputValidation(char* str)
 {
 
+    if(str == NULL || strlen(str) < 2){
+        return NULL;
+    }
+
     bool isInvalid = false;
 
     //Variables and Arrays
