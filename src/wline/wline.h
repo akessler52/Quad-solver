@@ -1,1 +1,1 @@
-wline(int file, char *str);
+void wline(int file, char *str);
