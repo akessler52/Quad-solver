@@ -1,7 +1,2 @@
-This directory contains the non-program files associated with the research,
-development, and release of the Quadsolver program. The "TPS" sub-directory
-contains the TPS reports for the team project. The "testing" and "coding_standards"
-sub-directories contain the files associated with project testing and the project
-coding standards respectively. The "spikes" directory contains all of the spikes.
-Lastly, the "legal" sub-directory contains contains the files associated with
-ownership and licensing.
+This directory contains a pdf of the coding standard used in this project along
+with a document clarifying changes the team made.
