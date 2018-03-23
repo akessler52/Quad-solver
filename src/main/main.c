@@ -68,6 +68,7 @@ int main(int argc, const char * argv[])
         printf("Citardarq Formula: X2 Value %lf \n",x2);
         */
 
+/*
         float Quadx1;
         float Quadx2;
         float *xVals2 = citardarqFormula(aVal, bVal, cVal);
@@ -75,6 +76,7 @@ int main(int argc, const char * argv[])
         Quadx2 = *(xVals2 + 1);
 
         wline(stdout, foutput(Quadx1, Quadx2))
+*/
         /*COMMENTED OUT BECAUSE THIS SHOULD BE HANDLED BY foutput AND wline
         printf("Quadratic Equation: X1 Value %lf \n",Quadx1);
         printf("Quadratic Equation: X2 Value %lf \n",Quadx2);
